@@ -12,6 +12,11 @@ def login():
 
 @app.route('/signup')
 def signup():
+    if request.method == 'POST':
+    nombre = request.form['nombre']
+    correo = request.form['correo']
+    contraseña = request.form['contraseña']
+    return f"<p>{nombre}, {correo}, {contraseña}<p>"
     return render_template('signup.html')
 
 @app.route('/about')
